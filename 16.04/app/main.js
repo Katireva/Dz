@@ -99,8 +99,8 @@ function meeting_room()
     let array = new Array;//Массив ответов 
     let xChair = 0; //Занятых стульев
     let ExistingChair = 0; // Сколько стульев в комнате вообще
-    let need = prompt("Введите сколько стульев нужно (не больше 8)","")
-    let meetingRooms = prompt("Введите строку","");
+    let need = prompt("Amount of chairs (max 8)","")
+    let meetingRooms = prompt("Enter string","");
     let meetingRooms2 = meetingRooms.replace(/[,.""''()?!-]/g, '');
     meetingRooms = meetingRooms2.split(" ");
     let length = meetingRooms.length;
@@ -114,7 +114,7 @@ function meeting_room()
         if(xChair != 0 && ExistingChair != 0){
             if(ExistingChair - xChair >= 0 && need - have >= 0){
                 LeftToGo = need - have;
-                console.log("Сколько осталось взять " + LeftToGo);
+                console.log("need to take 8 " + LeftToGo + " more");
                 if(LeftToGo > (ExistingChair - xChair)){
                     have += ExistingChair - xChair;
                     array.push(ExistingChair - xChair);
