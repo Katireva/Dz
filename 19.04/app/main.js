@@ -92,21 +92,22 @@ function chronos(/** arguments */)
         '10': 2,
         '14': 2,
         '18':	2,
+        '30': 2,
     }
 
     const month_shift = {
-        'January': 0,
-        'February': 3,
-        'March': 3,
-        'April': 6,
-        'May':	1,
-        'June':	4,
-        'July':	6,
-        'Augest':	2,
-        'September':	5,
-        'October':	0,
-        'November':	3,
-        'December':	5,
+        '1': 0, //'January': 0,
+        '2': 3, //'February': 3,
+        '3': 3, //'March': 3,
+        '4': 6, //'April': 6,
+        '5': 1, //'May':	1,
+        '6': 4, //'June':	4,
+        '7': 6, //'July':	6,
+        '8': 2, //'Augest':	2,
+        '9': 5, //'September':	5,
+        '10': 0, //'October':	0,
+        '11': 3, //'November':	3,
+        '12': 5, //'December':	5,
     }
 
     const daysOftheWeek = {
@@ -127,19 +128,19 @@ function chronos(/** arguments */)
     let len = y.length;
     const y_length = len < 4;
     let l = y_length ? index=(y.slice(0)) : index=(y.slice(0,2));
-    //console.log("Step 2"); console.log(year_shift[index]);
+    console.log("Step 2"); console.log(year_shift[index]);
     /*Step 3 - смещение лет*/
     let year = Number(y.slice(2,4));
     let shiftForyear = Math.trunc((year + year/4)%7);
-    //console.log("Step 3"); console.log(year);console.log(shiftForyear);
+    console.log("Step 3"); console.log(year);console.log(shiftForyear);
     /*Step 4 - значение смещения месяцев со второй таблицы*/
-    const indexFormonth = String(m);// console.log("Step 4"); console.log(month_shift[indexFormonth]);
+    const indexFormonth = String(m); console.log("Step 4"); console.log(month_shift[indexFormonth]);
     /*Step 5 - смещение дней*/
-    let shiftForday = Math.trunc(d%7);// console.log("Step 5"); console.log(shiftForday);
+    let shiftForday = Math.trunc(d%7); console.log("Step 5"); console.log(shiftForday);
     /*Step 6 - сложила все 4 числа*/
     let ans = year_shift[index] + shiftForyear + month_shift[indexFormonth] + shiftForday;
     /*Step 7 - разделила 8 по модулю на 7*/
-    //console.log("Step 6", ans);
+    console.log("Step 6", ans);
     ans=Math.trunc(ans%7);
     console.log(daysOftheWeek[ans]);
 
