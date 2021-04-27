@@ -9,20 +9,17 @@ class Fighter {
 }
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
-   
+ 
     let first;
     let second;
-    
+        
     if (firstAttacker == fighter1.name) 
-    {
-        first = fighter2;
-        second = fighter1;
-    }
-    if (firstAttacker == fighter2.name) 
-    {
-        first = fighter1;
-        second = fighter2;
-    }
+    {   first = fighter2;
+        second = fighter1;    }
+    
+        if (firstAttacker == fighter2.name) 
+    {   first = fighter1;
+        second = fighter2;    }
 
         while (first.health > 0 && second.health > 0) {
             first.health = first.health - second.damagePerAttack;
