@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Recall</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+<body>
+    <div class="columns">
+        <div class="column is-3 dates is-flex-direction-row is-flex-wrap-wrap"> </div>
+        <div class="column is-6 favorites"></div>
+        <div class="column is-3">
+            <input type="date" class="inp_date_start">
+            <input type="date" class="inp_date_finish">
+            <button class="button is-warning is-light is-small btn_date_filter">Filter</button>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal-background btn_close_modal_form"></div>
+        <div class="modal-content form_change">
+        </div>
+      </div>
+    <script src="app/main.js" type="module"></script>
+</body>
+</html>
